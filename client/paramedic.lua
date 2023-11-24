@@ -59,6 +59,9 @@ local function openParamedicMenu(ped, hospital)
                         Wait(1000)
                         DoScreenFadeIn(300)
 
+                        TriggerServerEvent('consumables:server:addHunger', 100000)
+                        TriggerServerEvent('consumables:server:addThirst', 100000)
+
                         utils.showNotification("treated_by_paramedic")
                         ClearPedTasks(ped)
                         ClearAreaOfObjects(hospital.paramedic.pos.xyz, 2.0, 0)
